@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formatowanie</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+
+
+<header>
+<h1>Formatowanie dokumentów HTML</h1>
+</header>
+<div class="pg12">
+<h2>Przykład listy - hobby</h2>
+    <ul>
+        <li>muzyka</li>
+        <li>turystyka
+            <ol>
+                <li>góry</li>
+                <li>jeziora</li>
+                <li>na rowerze</li>
+            </ol>
+        </li>
+        <li>książki</li>
+    </ul>
+</div>
+<div class="pg12">
+<h2>Przykład tabeli - rozkład dnia</h2>
+    <table>
+        <tr>
+            <th>Pora dnia</th>
+            <th>Obowiązki</th>
+        </tr>
+        <tr>
+            <td>rano</td>
+            <td>nauka</td>
+        </tr>
+        <tr>
+            <td>południe</td>
+            <td>zajęcia dodatkowe</td>
+        </tr>
+        <tr>
+            <td>popołudnie</td>
+            <td rowspan="2">moje hobby</td>
+        </tr>
+        <tr>
+            <td>wieczór</td>
+        </tr>
+    </table>
+</div>
+<div class="pg3">
+<img src="napisy.png" alt="technologia web">
+
+</div>
+<main>
+<p>Podaj rozmiar tekstu w procentach:<input type="number" id="rozmiar"> %</p>
+<p>
+    <select id=styltekstu>
+        <option value="normal">prosty</option>
+        <option value="italic">kursywa</option>
+    </select>
+</p>
+<p>Jakim kolorem sformatować tekst? Wybierz przycisk</p>
+<input type="button" id="red">
+<input type="button" id="green">
+<input type="button" id="blue">
+<p  id="opis">To jest przykład paragrafu, który może być dowolnie formatowany przez Java Script</p>
+</main>
+<footer>
+<p>Formatowaniem tekstu zajmował się: <i>Michał Bielawiak</i></p>
+<a href="formatowanie.pl" target="_blank">Odwiedź także</a>
+</footer>
+<script>
+    const red=document.querySelector('#red');
+    const green=document.querySelector('#green');
+    const blue=document.querySelector('#blue');
+    const opis=document.querySelector('#opis');
+    const styltekstu=document.querySelector('#styltekstu');
+    const rozmiar=document.querySelector('#rozmiar');
+
+    red.addEventListener("click", function(){
+        opis.style.fontSize=rozmiar.value+'%';
+        opis.style.fontStyle=styltekstu.value;
+        opis.style.color=this.id;
+    })
+    green.addEventListener("click", function(){
+        opis.style.fontSize=rozmiar.value+'%';
+        opis.style.fontStyle=styltekstu.value;
+        opis.style.color=this.id;
+    })
+    
+    blue.addEventListener("click", function(){
+        opis.style.fontSize=rozmiar.value+'%';
+        opis.style.fontStyle=styltekstu.value;
+        opis.style.color=this.id;
+    })
+
+
+
+</script>
+
+</body>
+</html>

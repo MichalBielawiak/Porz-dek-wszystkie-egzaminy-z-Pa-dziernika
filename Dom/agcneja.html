@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <title>KUP MIESZKANIE</title>
+            <link rel="stylesheet" href='agencja.css'>
+    </head>
+    <body>
+        <div id='panel-lewy'>
+                <h1> AGENCJA NIERUCHOMOŚCI </h1>
+                <h3>Oferujemy</h3>
+                <ol>
+                    <li>Nowe mieszkania</li>
+                    <li>Domy w naszy mmieście</li>
+                    <li>Domy w okolicy</li>
+                </ol>
+                <h3>Nasi Pracownicy</h3>
+                <table>
+                    <tr>
+                        <td rowspan="3">Jan Nowak Prezes</td>
+                        <td>Anna Kowalska</td>
+                    </tr>
+                    <tr>
+                        <td>Katarzyna Nowakowska</td>
+                    </tr>
+                    <tr>
+                        <td>Krzystfo Kowalewski</td>
+                    </tr>
+                </table>
+        </div>
+        <div id='panel-prawy'>
+            <h1>KALKULATOR CENY MIESZKANIA</h1>
+            <p>Podaj metraż mieszkania w m<sup>2</sup></p>
+            <input id="a">
+            <p>Liczba pokoi z zamontowantym okablowaniem sieciowym</p>
+            <input id="b">
+            <p><label><input type='checkbox' id='kafelki'> Kafelki w łazience? </label></p>
+            <button onclick="Oblicz()">Oblicz</button>
+            <p id='wynik'></p>
+            <script>
+                function Oblicz()   {
+                    var a = document.getElementById("a").value;
+                    var b = document.getElementById("b").value;
+                    var checkbox = document.getElementById("kafelki");
+                   
+                    if(checkbox.checked == true) {
+                        document.getElementById("wynik").innerHTML = "Koszt Mieszkania" + (a*4000+b*1000+2000) + "zł";
+                    }   else {
+                            document.getElementById("wynik").innerHTML = "Koszt Mieszkania" + (a*4000+b*1000) + "zł";
+                    }
+                }
+            </script>
+        </div>
+        <div id='stopka'>
+            <p>Autor Strony: Michał Bielawiak 4Ti Gr1</p>
+        </div> 
+    </body>
+</html>
